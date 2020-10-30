@@ -8,7 +8,10 @@
   <link rel="stylesheet" href="assets/style.css" />
   <script src="bower_components/angular/angular.js"></script>
   <body>
-    <div>{{ 3 + 3}}</div>
+    <div ng-controller="mySuperController as ctrl">
+      <h1>{{ctrl.title}}</h1>
+    </div>
   </body>
   <script src="app/app.module.js"></script>
+  <script src="app/app.controller.js"></script>
 </html>
