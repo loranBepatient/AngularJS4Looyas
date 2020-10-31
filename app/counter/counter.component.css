@@ -1,0 +1,5 @@
+.counter {
+  border: 2px solid var(--black);
+  margin: 1rem auto;
+  padding: 1rem;
+}

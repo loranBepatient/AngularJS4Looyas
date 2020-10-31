@@ -9,9 +9,3 @@ todos button {
   background-color: var(--yellow);
   padding: 1rem;
 }
-
-todos .todos-counter {
-  border: 2px solid var(--black);
-  margin: 1rem auto;
-  padding: 1rem;
-}
