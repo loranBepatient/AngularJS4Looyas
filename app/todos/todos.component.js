@@ -3,9 +3,10 @@ var component = {
   controller: controller,
 };
 
-function controller() {
+function controller($http) {
   var ctrl = this;
   ctrl.counter = 0;
+  ctrl.$onInit = onInit;
   ctrl.addOne = addOne;
   ctrl.substractOne = substractOne;
   ctrl.markCompleted = markCompleted;
@@ -61,6 +62,22 @@ function controller() {
       completed: true,
     },
   ];
+
+  function onInit() {
+    getTodosList();
+  }
+
+  function getTodosList() {
+    var url = "https://jsonplaceholder.typicode.com/todos";
+    $http
+      .get(url)
+      .then(function (todos) {
+        ctrl.todos = todos.data;
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
 
   function addOne() {
     ctrl.counter++;
