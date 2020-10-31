@@ -8,6 +8,8 @@ function controller() {
   ctrl.counter = 0;
   ctrl.addOne = addOne;
   ctrl.substractOne = substractOne;
+  ctrl.markCompleted = markCompleted;
+  ctrl.deleteTodo = deleteTodo;
 
   ctrl.todos = [
     {
@@ -68,6 +70,19 @@ function controller() {
     if (ctlr.counter > 0) {
       ctrl.counter--;
     }
+  }
+
+  function markCompleted(id) {
+    var index = ctrl.todos.findIndex(function (todo) {
+      return todo.id === +id;
+    });
+    ctrl.todos[index].completed = true;
+  }
+
+  function deleteTodo(id) {
+    ctrl.todos = ctrl.todos.filter(function (todo) {
+      return todo.id !== id;
+    });
   }
 }
 

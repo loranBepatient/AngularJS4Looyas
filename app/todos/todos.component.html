@@ -3,7 +3,12 @@
 <counter value="$ctrl.todos.length"></counter>
 
 <ul class="list-group">
-  <todo ng-repeat="todo in $ctrl.todos" title="{{ todo.title }}"></todo>
+  <todo
+    ng-repeat="todo in $ctrl.todos"
+    todo="todo"
+    done="$ctrl.markCompleted(id)"
+    delete="$ctrl.deleteTodo(id)"
+  ></todo>
 </ul>
 
 <button ng-click="$ctrl.addOne()">Ajouter</button>

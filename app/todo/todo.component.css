@@ -1,0 +1,5 @@
+todo h2.completed {
+  transition: all ease 1s;
+  text-decoration: line-through;
+  color: lightgray;
+}
