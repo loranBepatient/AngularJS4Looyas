@@ -1,5 +1,9 @@
 <h1>les trucs a faire</h1>
 
-<counter value="$ctrl.counter"></counter>
+<counter value="$ctrl.todos.length"></counter>
+
+<ul class="list-group">
+  <todo ng-repeat="todo in $ctrl.todos" title="{{ todo.title }}"></todo>
+</ul>
 
 <button ng-click="$ctrl.addOne()">Ajouter</button>

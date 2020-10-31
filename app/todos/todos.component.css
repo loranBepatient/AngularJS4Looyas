@@ -9,3 +9,7 @@ todos button {
   background-color: var(--yellow);
   padding: 1rem;
 }
+
+todos ul.list-group {
+  margin: 2rem auto;
+}
