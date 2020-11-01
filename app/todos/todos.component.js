@@ -44,4 +44,4 @@ function controller(todosService) {
   }
 }
 
-angular.module("mySuperApp").component("todos", component);
+angular.module("todos").component("todos", component);

@@ -1,1 +1,1 @@
-angular.module("mySuperApp", []);
+angular.module("mySuperApp", ["todos"]);

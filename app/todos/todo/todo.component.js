@@ -1,5 +1,5 @@
 var component = {
-  templateUrl: "./app/todo/todo.component.html",
+  templateUrl: "./app/todos/todo/todo.component.html",
   bindings: {
     todo: "<",
     done: "&",

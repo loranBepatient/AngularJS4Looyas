@@ -1,4 +1,4 @@
-angular.module("mySuperApp").factory("todosService", todosService);
+angular.module("todos").factory("todosService", todosService);
 
 function todosService($http) {
   var url = "https://jsonplaceholder.typicode.com/todos";
