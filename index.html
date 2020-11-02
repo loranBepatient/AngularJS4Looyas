@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="mySuperApp">
   <head>
+    <base href="/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -11,14 +12,20 @@
   />
   <link rel="stylesheet" href="assets/style.css" />
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <body>
-    <todos></todos>
+    <!-- <a ui-sref="todos" ui-sref-active="active">Hello</a> -->
+    <ui-view></ui-view>
   </body>
   <script src="app/app.module.js"></script>
+  <script src="app/app.config.js"></script>
   <script src="app/app.controller.js"></script>
   <script src="app/counter/counter.component.js"></script>
+
   <script src="app/todos/todos.module.js"></script>
+  <script src="app/todos/todos.config.js"></script>
   <script src="app/todos/todos.component.js"></script>
   <script src="app/todos/todos.service.js"></script>
   <script src="app/todos/todo/todo.component.js"></script>
+  <script src="app/todos/todoDetail/todoDetail.component.js"></script>
 </html>

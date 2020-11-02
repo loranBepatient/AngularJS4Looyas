@@ -5,6 +5,7 @@ function todosService($http) {
 
   return {
     getTodos: getTodos,
+    getTodo: getTodo,
   };
 
   function getTodos() {
@@ -16,6 +17,14 @@ function todosService($http) {
 
     function getTodosFailed(error) {
       return error.message;
+    }
+  }
+
+  function getTodo(id) {
+    return $http.get(`${url}/${id}`).then(getTodoComplete);
+
+    function getTodoComplete(response) {
+      return response.data;
     }
   }
 }

@@ -3,7 +3,7 @@ var component = {
   controller: controller,
 };
 
-function controller(todosService) {
+function controller(todosService, $state) {
   var ctrl = this;
   ctrl.todos = [];
 
@@ -13,6 +13,7 @@ function controller(todosService) {
   ctrl.substractOne = substractOne;
   ctrl.markCompleted = markCompleted;
   ctrl.deleteTodo = deleteTodo;
+  ctrl.editTodo = editTodo;
 
   function onInit() {
     todosService.getTodos().then(function (todos) {
@@ -41,6 +42,12 @@ function controller(todosService) {
     ctrl.todos = ctrl.todos.filter(function (todo) {
       return todo.id !== id;
     });
+  }
+
+  function editTodo(id) {
+    console.log(id);
+    console.log($state);
+    $state.go("todo", { id: id });
   }
 }
 

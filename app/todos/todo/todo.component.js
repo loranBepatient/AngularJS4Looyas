@@ -4,6 +4,7 @@ var component = {
     todo: "<",
     done: "&",
     delete: "&",
+    edit: "&",
   },
   controller: controller,
 };
@@ -13,6 +14,7 @@ function controller() {
 
   ctrl.onDone = onDone;
   ctrl.onDelete = onDelete;
+  ctrl.onEdit = onEdit;
 
   function onDone(id) {
     ctrl.done({ id: id });
@@ -20,6 +22,10 @@ function controller() {
 
   function onDelete(id) {
     ctrl.delete({ id: id });
+  }
+
+  function onEdit(id) {
+    ctrl.edit({ id: id });
   }
 }
 angular.module("mySuperApp").component("todo", component);

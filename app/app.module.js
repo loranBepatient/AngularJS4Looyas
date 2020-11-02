@@ -1,1 +1,1 @@
-angular.module("mySuperApp", ["todos"]);
+angular.module("mySuperApp", ["ui.router", "todos"]);
