@@ -1,1 +1,4 @@
-angular.module("mySuperApp", ["ui.router", "todos"]);
+(function () {
+  "use strict";
+  angular.module("mySuperApp", ["ui.router", "todos"]);
+})();

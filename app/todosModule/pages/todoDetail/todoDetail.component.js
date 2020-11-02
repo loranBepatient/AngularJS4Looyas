@@ -1,21 +1,25 @@
-var todoDetail = {
-  templateUrl: "app/todosModule/pages/todoDetail/todoDetail.component.html",
-  controller: controller,
-};
+(function () {
+  "use strict";
 
-function controller(todosService, $stateParams) {
-  var ctrl = this;
-  ctrl.todo = undefined;
+  var todoDetail = {
+    templateUrl: "app/todosModule/pages/todoDetail/todoDetail.component.html",
+    controller: controller,
+  };
 
-  ctrl.$onInit = onInit;
+  function controller(todosService, $stateParams) {
+    var ctrl = this;
+    ctrl.todo = undefined;
 
-  function onInit() {
-    console.log($stateParams);
+    ctrl.$onInit = onInit;
 
-    todosService.getTodo($stateParams.id).then(function (todo) {
-      ctrl.todo = todo;
-    });
+    function onInit() {
+      console.log($stateParams);
+
+      todosService.getTodo($stateParams.id).then(function (todo) {
+        ctrl.todo = todo;
+      });
+    }
   }
-}
 
-angular.module("todos").component("todoDetail", todoDetail);
+  angular.module("todos").component("todoDetail", todoDetail);
+})();

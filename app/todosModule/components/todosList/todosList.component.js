@@ -1,12 +1,16 @@
-var component = {
-  templateUrl:
-    "./app/todosModule/components/todosList/todosList.component.html",
-  bindings: {
-    todos: "<",
-    done: "&",
-    delete: "&",
-    edit: "&",
-  },
-};
+(function () {
+  "use strict";
 
-angular.module("todos").component("todosList", component);
+  var component = {
+    templateUrl:
+      "./app/todosModule/components/todosList/todosList.component.html",
+    bindings: {
+      todos: "<",
+      done: "&",
+      delete: "&",
+      edit: "&",
+    },
+  };
+
+  angular.module("todos").component("todosList", component);
+})();

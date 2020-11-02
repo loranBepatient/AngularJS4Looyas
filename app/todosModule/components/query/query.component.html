@@ -1,0 +1,27 @@
+<form>
+  <div class="form-group">
+    <!-- <label for="exampleInputEmail1">Email address</label> -->
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Rechercher une tache"
+        aria-label="Rechercher une tache"
+        aria-describedby="button-addon2"
+        ng-model="$ctrl.query.value"
+        ng-model-options="$ctrl.query.options"
+        ng-change="$ctrl.onChange()"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-secondary"
+          type="button"
+          ng-disabled="!$ctrl.query"
+          id="button-addon2"
+        >
+          Chercher
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

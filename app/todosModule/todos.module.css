@@ -1,3 +1,4 @@
 @import "./pages/todos/todos.component.css";
 @import "./components/todosList/todosList.component.css";
 @import "./components/todo/todo.component.css";
+@import "./components/query/query.component.css";

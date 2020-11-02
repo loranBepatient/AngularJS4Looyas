@@ -1,1 +1,3 @@
-angular.module("todos", []);
+(function () {
+  angular.module("todos", []);
+})();

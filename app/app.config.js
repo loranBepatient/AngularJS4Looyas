@@ -1,10 +1,14 @@
-angular.module("mySuperApp").config(appConfig);
+(function () {
+  "use strict";
 
-function appConfig($urlRouterProvider, $locationProvider) {
-  $locationProvider.html5Mode({
-    enable: true,
-    requireBase: false,
-  });
+  function appConfig($urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode({
+      enable: true,
+      requireBase: false,
+    });
 
-  $urlRouterProvider.otherwise("/todos");
-}
+    $urlRouterProvider.otherwise("/todos");
+  }
+
+  angular.module("mySuperApp").config(appConfig);
+})();

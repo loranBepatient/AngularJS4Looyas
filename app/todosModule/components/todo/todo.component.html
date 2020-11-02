@@ -15,7 +15,7 @@
       class="btn btn-secondary"
       ng-click="$ctrl.onDone($ctrl.todo.id)"
     >
-      Fait
+      {{ $ctrl.todo.completed ? "Recommencer" : "A faire" }}
     </button>
     <button
       type="button"

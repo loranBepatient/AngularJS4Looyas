@@ -1,31 +1,35 @@
-var component = {
-  templateUrl: "app/todosModule/components/todo/todo.component.html",
-  bindings: {
-    todo: "<",
-    done: "&",
-    delete: "&",
-    edit: "&",
-  },
-  controller: controller,
-};
+(function () {
+  "use strict";
 
-function controller() {
-  var ctrl = this;
+  var component = {
+    templateUrl: "app/todosModule/components/todo/todo.component.html",
+    bindings: {
+      todo: "<",
+      done: "&",
+      delete: "&",
+      edit: "&",
+    },
+    controller: controller,
+  };
 
-  ctrl.onDone = onDone;
-  ctrl.onDelete = onDelete;
-  ctrl.onEdit = onEdit;
+  function controller() {
+    var ctrl = this;
 
-  function onDone(id) {
-    ctrl.done({ id: id });
+    ctrl.onDone = onDone;
+    ctrl.onDelete = onDelete;
+    ctrl.onEdit = onEdit;
+
+    function onDone(id) {
+      ctrl.done({ id: id });
+    }
+
+    function onDelete(id) {
+      ctrl.delete({ id: id });
+    }
+
+    function onEdit(id) {
+      ctrl.edit({ id: id });
+    }
   }
-
-  function onDelete(id) {
-    ctrl.delete({ id: id });
-  }
-
-  function onEdit(id) {
-    ctrl.edit({ id: id });
-  }
-}
-angular.module("mySuperApp").component("todo", component);
+  angular.module("mySuperApp").component("todo", component);
+})();
