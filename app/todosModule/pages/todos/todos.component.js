@@ -1,5 +1,5 @@
 var component = {
-  templateUrl: "./app/todos/todos.component.html",
+  templateUrl: "./app/todosModule/pages/todos/todos.component.html",
   controller: controller,
 };
 
@@ -10,7 +10,6 @@ function controller(todosService, $state) {
   ctrl.$onInit = onInit;
 
   ctrl.addOne = addOne;
-  ctrl.substractOne = substractOne;
   ctrl.markCompleted = markCompleted;
   ctrl.deleteTodo = deleteTodo;
   ctrl.editTodo = editTodo;
@@ -23,12 +22,6 @@ function controller(todosService, $state) {
 
   function addOne() {
     ctrl.counter++;
-  }
-
-  function substractOne() {
-    if (ctlr.counter > 0) {
-      ctrl.counter--;
-    }
   }
 
   function markCompleted(id) {
@@ -51,4 +44,4 @@ function controller(todosService, $state) {
   }
 }
 
-angular.module("todos").component("todos", component);
+angular.module("todos").component("todosPage", component);

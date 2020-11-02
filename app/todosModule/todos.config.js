@@ -10,7 +10,7 @@ function todosConfig($stateProvider, $locationProvider) {
     {
       name: "todos",
       url: "/todos",
-      component: "todos",
+      component: "todosPage",
     },
     {
       name: "todo",

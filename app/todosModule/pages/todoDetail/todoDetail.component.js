@@ -1,5 +1,5 @@
 var todoDetail = {
-  templateUrl: "app/todos/todoDetail/todoDetail.component.html",
+  templateUrl: "app/todosModule/pages/todoDetail/todoDetail.component.html",
   controller: controller,
 };
 

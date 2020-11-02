@@ -1,14 +1,10 @@
 angular.module("mySuperApp").config(appConfig);
 
-function appConfig($stateProvider, $locationProvider) {
+function appConfig($urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode({
     enable: true,
     requireBase: false,
   });
 
-  var routes = [{ name: "home", url: "/" }];
-
-  routes.forEach(function (route) {
-    $stateProvider.state(route);
-  });
+  $urlRouterProvider.otherwise("/todos");
 }

@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <todo
+    ng-repeat="todo in $ctrl.todos"
+    todo="todo"
+    done="$ctrl.done({id})"
+    delete="$ctrl.delete({id})"
+    edit="$ctrl.edit({id})"
+  ></todo>
+</ul>

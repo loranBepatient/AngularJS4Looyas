@@ -1,0 +1,19 @@
+{
+  "name": "todos",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^1.0.28",
+    "angular": "^1.8.2",
+    "bootstrap": "^4.5.3"
+  }
+}
