@@ -6,9 +6,9 @@
     controller: controller,
   };
 
-  function controller(todosService, $state) {
+  function controller(TodosService, $state) {
     var ctrl = this;
-    ctrl.todos = [];
+    ctrl.todos = null;
 
     ctrl.$onInit = onInit;
 
@@ -18,9 +18,31 @@
     ctrl.editTodo = editTodo;
 
     function onInit() {
-      todosService.getTodos().then(function (todos) {
-        ctrl.todos = todos;
-      });
+      // todosService
+      //   .getTodos()
+      //   .then(function (todos) {
+      //     ctrl.todos = todos;
+      //   })
+      //   .catch(function (error) {
+      //     alert("Impossible de recuperer la liste des taches");
+      //   });
+
+      // todosService
+      //   .getUsers()
+      //   .then(function (users) {
+      //     debugger;
+      //   })
+      //   .catch(function (error) {
+      //     alert("Impossible de recuperer les utilisateurs");
+      //   });
+
+      TodosService.getTodosWithUsers()
+        .then(function (todosWithUsers) {
+          ctrl.todos = todosWithUsers;
+        })
+        .catch(function (error) {
+          alert("Impossible de recuperer les informations");
+        });
     }
 
     function addOne() {

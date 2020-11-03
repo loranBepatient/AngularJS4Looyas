@@ -6,18 +6,22 @@
     controller: controller,
   };
 
-  function controller(todosService, $stateParams) {
+  function controller(TodosService, $stateParams) {
     var ctrl = this;
-    ctrl.todo = undefined;
+    ctrl.todo = null;
+    ctrl.userTodos = null;
 
     ctrl.$onInit = onInit;
 
     function onInit() {
-      console.log($stateParams);
-
-      todosService.getTodo($stateParams.id).then(function (todo) {
-        ctrl.todo = todo;
-      });
+      TodosService.getTodo($stateParams.id)
+        .then(function (todo) {
+          ctrl.todo = todo;
+          return TodosService.getTodosForSelectedUser(todo.userId);
+        })
+        .then(function (filteredTodos) {
+          ctrl.userTodos = filteredTodos;
+        });
     }
   }
 

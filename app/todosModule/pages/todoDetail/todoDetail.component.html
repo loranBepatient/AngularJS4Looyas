@@ -1,15 +1,7 @@
-<div class="card" style="width: 50%">
-  <img
-    src="https://via.placeholder.com/150/FFFF00/000000?Text=WebsiteBuilders.com"
-    class="card-img-top"
-    alt="..."
-  />
-  <div class="card-body">
-    <h5 class="card-title">{{ $ctrl.todo.title }}</h5>
-    <p class="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+  <div class="row">
+    <todo-form class="col-md-8 order-md1" todo="$ctrl.todo"></todo-form>
+    <user-todo-list class="col-md-4 order-md2" user-todos="$ctrl.userTodos">
+    </user-todo-list>
   </div>
 </div>

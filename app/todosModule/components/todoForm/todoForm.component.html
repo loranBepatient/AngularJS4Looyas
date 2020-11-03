@@ -1,0 +1,24 @@
+<h4 class="mb-3">Tache a realiser</h4>
+<h5 class="mb-3">de nom de la personne</h5>
+
+<form class="needs-validation" ng-submit="$ctrl.onSubmit">
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <label for="task">Titre de la tache</label>
+      <input
+        type="text"
+        class="form-control"
+        id="task"
+        ng-disabled="$ctrl.todo.completed"
+        placeholder="Nouvelle tache"
+        ng-model="$ctrl.todo.title"
+        required
+      />
+      <div class="invalid-feedback">Valid first name is required.</div>
+    </div>
+  </div>
+  <hr class="mb-4" />
+  <button class="btn btn-primary btn-lg btn-block" type="submit">
+    Changer le titre de la tache
+  </button>
+</form>
