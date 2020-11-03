@@ -1,7 +1,9 @@
 (function () {
   "use strict";
   function LoginService($http) {
-    var loginEndPoint = "";
+    var loginEndPoint =
+      "https://beta-mobi-care4today.bepatientsolutions.com/rest/v2/;login";
+
     return {
       login: login,
     };
