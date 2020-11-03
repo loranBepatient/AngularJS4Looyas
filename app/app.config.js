@@ -7,7 +7,7 @@
       requireBase: false,
     });
 
-    $urlRouterProvider.otherwise("/todos");
+    $urlRouterProvider.otherwise("/login");
   }
 
   angular.module("mySuperApp").config(appConfig);

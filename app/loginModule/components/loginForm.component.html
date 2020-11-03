@@ -1,0 +1,33 @@
+<form name="loginForm" ng-submit="$ctrl.onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Votre adresse email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      required
+      aria-describedby="emailHelp"
+      ng-model="$ctrl.form.email"
+    />
+    <small id="emailHelp" class="form-text text-muted"
+      >We'll never share your email with anyone else.</small
+    >
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Mot de passe</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      required
+      ng-model="$ctrl.form.password"
+    />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    ng-disabled="loginForm.$invalid"
+  >
+    Se connecter
+  </button>
+</form>
