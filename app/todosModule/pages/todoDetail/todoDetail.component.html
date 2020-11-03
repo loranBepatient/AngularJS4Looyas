@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row">
-    <todo-form class="col-md-8 order-md1" todo="$ctrl.todo"></todo-form>
+    <todo-form
+      class="col-md-8 order-md1"
+      todo="$ctrl.todo"
+      name="{{ $ctrl.user.name }}"
+    ></todo-form>
     <user-todo-list class="col-md-4 order-md2" user-todos="$ctrl.userTodos">
     </user-todo-list>
   </div>

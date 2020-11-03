@@ -5,6 +5,7 @@
     templateUrl: "app/todosModule/components/todoForm/todoForm.component.html",
     bindings: {
       todo: "<",
+      name: "@",
     },
     controller: controller,
   };

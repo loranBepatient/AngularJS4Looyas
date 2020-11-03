@@ -18,24 +18,6 @@
     ctrl.editTodo = editTodo;
 
     function onInit() {
-      // todosService
-      //   .getTodos()
-      //   .then(function (todos) {
-      //     ctrl.todos = todos;
-      //   })
-      //   .catch(function (error) {
-      //     alert("Impossible de recuperer la liste des taches");
-      //   });
-
-      // todosService
-      //   .getUsers()
-      //   .then(function (users) {
-      //     debugger;
-      //   })
-      //   .catch(function (error) {
-      //     alert("Impossible de recuperer les utilisateurs");
-      //   });
-
       TodosService.getTodosWithUsers()
         .then(function (todosWithUsers) {
           ctrl.todos = todosWithUsers;
@@ -63,8 +45,6 @@
     }
 
     function editTodo(id) {
-      console.log(id);
-      console.log($state);
       $state.go("todo", { id: id });
     }
   }

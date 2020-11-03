@@ -6,25 +6,26 @@
     var usersEndPoint = "https://jsonplaceholder.typicode.com/users";
 
     return {
-      getTodo: getTodo,
       getTodosWithUsers: getTodosWithUsers,
-      getTodosForSelectedUser: getTodosForSelectedUser,
+      getUserWithTodos: getUserWithTodos,
     };
 
-    function getTodo(id) {
-      return $http.get(`${todosEndPoint}/${id}`).then(getTodoComplete);
+    function getUserWithTodos(selectedTodoId) {
+      var deferred = $q.defer();
+      var userWithTodo = {};
 
-      function getTodoComplete(response) {
-        return response.data;
-      }
-    }
+      getTodo(selectedTodoId)
+        .then(function (todo) {
+          Object.assign(userWithTodo, { todo: todo });
+          return $q.all([getUser(todo.userId), getUserTodos(todo.userId)]);
+        })
+        .then(function ([user, userTodos]) {
+          Object.assign(userWithTodo, { user: user, userTodos: userTodos });
+          deferred.resolve(userWithTodo);
+        })
+        .catch(handleError);
 
-    function getTodosForSelectedUser(id) {
-      return getTodos().then(function (todos) {
-        return todos.filter(function (todo) {
-          return todo.userId === id && !todo.completed;
-        });
-      });
+      return deferred.promise;
     }
 
     function getTodosWithUsers() {
@@ -35,7 +36,9 @@
 
       function getTodosWithUsersComplete([todos, users]) {
         return todos.map(function (todo) {
-          var user = users[todo.userId];
+          var user = users.find(function (user) {
+            return user.id === todo.userId;
+          });
           var updatedTodo = Object.assign(todo, { user: user });
           return updatedTodo;
         });
@@ -43,6 +46,38 @@
 
       function getTodosWithUsersFailed(error) {
         handleError(error);
+      }
+    }
+
+    function getUser(id) {
+      return $http
+        .get(`${usersEndPoint}/${id}`)
+        .then(getUserComplete)
+        .catch(getUserFailed);
+
+      function getUserComplete(response) {
+        return response.data;
+      }
+      function getUserFailed(error) {
+        handleError(error);
+      }
+    }
+
+    function getUserTodos(_userId) {
+      return getTodos().then(getUserTodosComplete);
+
+      function getUserTodosComplete(response) {
+        return response.filter(function (todo) {
+          return todo.userId === _userId;
+        });
+      }
+    }
+
+    function getTodo(id) {
+      return $http.get(`${todosEndPoint}/${id}`).then(getTodoComplete);
+
+      function getTodoComplete(response) {
+        return response.data;
       }
     }
 

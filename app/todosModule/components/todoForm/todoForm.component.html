@@ -1,5 +1,5 @@
 <h4 class="mb-3">Tache a realiser</h4>
-<h5 class="mb-3">de nom de la personne</h5>
+<h5 class="mb-3">{{ $ctrl.name }}</h5>
 
 <form class="needs-validation" ng-submit="$ctrl.onSubmit">
   <div class="row">
@@ -18,7 +18,11 @@
     </div>
   </div>
   <hr class="mb-4" />
-  <button class="btn btn-primary btn-lg btn-block" type="submit">
+  <button
+    class="btn btn-primary btn-lg btn-block"
+    type="submit"
+    ng-disabled="$ctrl.todo.completed"
+  >
     Changer le titre de la tache
   </button>
 </form>

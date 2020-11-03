@@ -17,7 +17,7 @@
           $state.go("todos");
         })
         .catch(function (error) {
-          console.log(error);
+          alert("identifiant ou mot de passe errone");
         });
     }
 

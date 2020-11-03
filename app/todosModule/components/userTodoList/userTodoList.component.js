@@ -6,15 +6,7 @@
     bindings: {
       userTodos: "<",
     },
-
-    controller: controller,
   };
-
-  function controller() {
-    this.$onInit = function () {
-      console.log(this);
-    };
-  }
 
   angular.module("todos").component("userTodoList", userTodoList);
 })();

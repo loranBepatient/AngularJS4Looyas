@@ -9,19 +9,21 @@
   function controller(TodosService, $stateParams) {
     var ctrl = this;
     ctrl.todo = null;
+    ctrl.user = null;
     ctrl.userTodos = null;
 
     ctrl.$onInit = onInit;
 
     function onInit() {
-      TodosService.getTodo($stateParams.id)
-        .then(function (todo) {
-          ctrl.todo = todo;
-          return TodosService.getTodosForSelectedUser(todo.userId);
-        })
-        .then(function (filteredTodos) {
-          ctrl.userTodos = filteredTodos;
-        });
+      getUser();
+    }
+
+    function getUser() {
+      TodosService.getUserWithTodos($stateParams.id).then(function (result) {
+        ctrl.todo = result.todo;
+        ctrl.userTodos = result.userTodos;
+        ctrl.user = result.user;
+      });
     }
   }
 
