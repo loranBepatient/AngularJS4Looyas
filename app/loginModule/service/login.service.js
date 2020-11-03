@@ -9,7 +9,25 @@
     };
 
     function login(credentials) {
-      console.log(credentials);
+      return $http
+        .post(loginEndPoint, _parseLogin(credentials))
+        .then(onLoginComplete)
+        .catch(onLoginFailed);
+    }
+
+    function onLoginComplete(response) {
+      return response;
+    }
+
+    function onLoginFailed(error) {
+      throw new Error(error.message);
+    }
+
+    function _parseLogin(credentials) {
+      return {
+        login: credentials.email,
+        password: credentials.password,
+      };
     }
   }
   angular.module("loginModule").factory("LoginService", LoginService);
