@@ -1,5 +1,8 @@
 (function () {
   "use strict";
+
+  LoginService.$inject = ["$http"];
+
   function LoginService($http) {
     var loginEndPoint =
       "https://beta-mobi-care4today.bepatientsolutions.com/rest/v2/;login";

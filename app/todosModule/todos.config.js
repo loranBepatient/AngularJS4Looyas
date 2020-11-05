@@ -1,5 +1,8 @@
 (function () {
   "use strict";
+
+  todosConfig.$inject = ["$stateProvider", "$locationProvider"];
+
   function todosConfig($stateProvider, $locationProvider) {
     $locationProvider.html5Mode({
       enable: true,

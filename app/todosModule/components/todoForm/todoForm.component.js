@@ -7,10 +7,7 @@
       todo: "<",
       name: "@",
     },
-    controller: controller,
   };
-
-  function controller() {}
 
   angular.module("todos").component("todoForm", component);
 })();

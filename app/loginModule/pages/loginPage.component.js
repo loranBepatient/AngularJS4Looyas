@@ -5,6 +5,8 @@
     controller: controller,
   };
 
+  controller.$inject = ["LoginService", "$state"];
+
   function controller(LoginService, $state) {
     var ctrl = this;
 

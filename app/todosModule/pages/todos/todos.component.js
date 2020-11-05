@@ -6,6 +6,8 @@
     controller: controller,
   };
 
+  controller.$inject = ["TodosService", "$state"];
+
   function controller(TodosService, $state) {
     var ctrl = this;
     ctrl.todos = null;

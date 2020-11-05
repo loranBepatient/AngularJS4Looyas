@@ -1,6 +1,8 @@
 (function () {
   "use strict";
 
+  TodosService.$inject = ["$http", "$q"];
+
   function TodosService($http, $q) {
     var todosEndPoint = "https://jsonplaceholder.typicode.com/todos";
     var usersEndPoint = "https://jsonplaceholder.typicode.com/users";

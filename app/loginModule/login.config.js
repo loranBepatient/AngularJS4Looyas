@@ -1,6 +1,8 @@
 (function () {
   "use strict";
 
+  loginConfig.$inject = ["$stateProvider"];
+  
   function loginConfig($stateProvider) {
     var routes = [
       {
