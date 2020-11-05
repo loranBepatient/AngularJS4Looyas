@@ -1,6 +1,6 @@
 <ul class="list-group">
   <todo
-    ng-repeat="todo in $ctrl.todos"
+    ng-repeat="todo in $ctrl.todos | nameFilter: $ctrl.query"
     todo="todo"
     done="$ctrl.done({id})"
     delete="$ctrl.delete({id})"

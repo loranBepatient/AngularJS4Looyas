@@ -11,6 +11,7 @@
   function controller(TodosService, $state) {
     var ctrl = this;
     ctrl.todos = null;
+    ctrl.query = null;
 
     ctrl.$onInit = onInit;
 
@@ -18,6 +19,7 @@
     ctrl.markCompleted = markCompleted;
     ctrl.deleteTodo = deleteTodo;
     ctrl.editTodo = editTodo;
+    ctrl.onQueryChange = onQueryChange;
 
     function onInit() {
       TodosService.getTodosWithUsers()
@@ -48,6 +50,10 @@
 
     function editTodo(id) {
       $state.go("todo", { id: id });
+    }
+
+    function onQueryChange(query) {
+      ctrl.query = query;
     }
   }
 

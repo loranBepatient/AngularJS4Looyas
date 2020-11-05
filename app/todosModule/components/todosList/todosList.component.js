@@ -9,6 +9,7 @@
       done: "&",
       delete: "&",
       edit: "&",
+      query: "@",
     },
   };
 

@@ -2,13 +2,16 @@
 
 <counter value="$ctrl.todos.length"></counter>
 
-<query></query>
+<query query-change="$ctrl.onQueryChange(query)"></query>
 
 <todos-list
   todos="$ctrl.todos"
   done="$ctrl.markCompleted(id)"
   delete="$ctrl.deleteTodo(id)"
   edit="$ctrl.editTodo(id)"
+  query="{{ $ctrl.query }}"
 ></todos-list>
 
-<button ng-click="$ctrl.addOne()">Ajouter</button>
+<button ng-click="$ctrl.addOne()" class="btn btn-primary btn-block">
+  Ajouter
+</button>

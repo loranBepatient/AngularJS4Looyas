@@ -8,6 +8,7 @@
       done: "&",
       delete: "&",
       edit: "&",
+      query: "<",
     },
     controller: controller,
   };
