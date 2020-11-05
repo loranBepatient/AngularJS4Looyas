@@ -1,4 +1,10 @@
 (function () {
   "use strict";
-  angular.module("mySuperApp", ["ui.router", "todos", "loginModule"]);
+
+  angular.module("mySuperApp", [
+    "ui.router",
+    "ngAnimate",
+    "todos",
+    "loginModule",
+  ]);
 })();

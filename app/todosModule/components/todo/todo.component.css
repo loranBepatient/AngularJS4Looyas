@@ -3,3 +3,17 @@ todo h2.completed {
   text-decoration: line-through;
   color: lightgray;
 }
+
+todo li.list-group-item {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 1rem auto;
+}
+
+todo.ng-leave {
+  transition: 0.5s ease-in all;
+  opacity: 1;
+}
+todo.ng-leave.ng-leave-active {
+  transform: scale(0);
+  opacity: 0;
+}
